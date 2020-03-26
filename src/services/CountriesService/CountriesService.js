@@ -5,7 +5,19 @@ class CountriesService {
 
   async getAllCountries() {
     const url = `${API_URL}/all`
-    return axios.get(url).then(response => response.data)
+
+	  if (localStorage.getItem('reactCountries')) {
+      const list = JSON.parse(localStorage.getItem('reactCountries'))
+	    return list
+
+	  } else {
+      return axios.get(url).then(response => {
+        const list = response.data
+        localStorage.setItem('reactCountries', JSON.stringify(list))
+        return list
+      })
+    }
+
   }
 
 }

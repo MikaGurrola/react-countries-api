@@ -12,12 +12,11 @@ class Country extends React.Component {
   }
 
   componentDidMount() {
-    console.log('country page')
     const countryId = this.props.match.params.country
 
     const countryList = JSON.parse(localStorage.getItem('reactCountries'))
-
-    const countryFound = countryList.find(country => country.alpha3Code === countryId);
+    
+    const countryFound = countryList.find(country => countryId === country.alpha3Code);
 
     this.setState({ country: countryFound })
     
