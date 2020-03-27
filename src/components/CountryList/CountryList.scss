@@ -9,7 +9,7 @@
     display: grid;
     overflow: hidden;
     transition: all 0.25s linear;
-    background-image: linear-gradient(to bottom, rgba(var(--gray), 0), rgba(var(--gray), var(--light)) );
+    background-image: linear-gradient(to bottom, rgba(var(--white), 0), rgba(var(--white), var(--saturated)) );
     padding: 0 10px 20px 10px;
     border-radius: 8px;
     height: 100%;
@@ -19,7 +19,7 @@
     &:hover,
     &:focus {
       outline: none;
-      background-image: linear-gradient(to bottom, rgba(var(--gray), 0), rgba(var(--lightBlue), var(--light)));
+      background-image: linear-gradient(to bottom, rgba(var(--white), 0), rgba(var(--lightBlue), var(--light)));
     }
 
     &:visited {
@@ -52,14 +52,13 @@
   border-top-right-radius: 8px;
   overflow: hidden;
 
-
   @media screen and (min-width: 500px) {
     height: 200px;
   }
 
   img {
     object-fit: cover;
-
+    height: 100%;
   }
 }
 

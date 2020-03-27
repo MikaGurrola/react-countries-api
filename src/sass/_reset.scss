@@ -56,3 +56,7 @@ input {
   border-radius: 0;
   margin: 0;
 }
+
+body {
+  background: rgba(var(--gray), var(--light));
+}

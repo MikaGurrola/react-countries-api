@@ -85,7 +85,6 @@ class Countries extends React.Component {
 	}
 
 	render() {
-    console.log(typeof(this.state.filteredCountries))
 		return (
 			<div>
         <div className="header">

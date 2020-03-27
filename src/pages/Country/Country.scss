@@ -1,0 +1,140 @@
+.borders {
+  display: grid;
+  grid-gap: 10px;
+}
+
+.borderList {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  &__border {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-gap: 10px;
+    align-items: center;
+    border: 1px solid rgba(var(--blue), var(--light));
+    background: rgba(var(--blue), var(--light));
+    padding: 0 5px 0 0;
+    border-radius: 20px;
+    overflow: hidden;
+    font-size: 16px;
+    position: relative;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+      transform: scaleX(0);
+      transform-origin: center left;
+      background: rgba(var(--blue), var(--saturated));
+      transition: transform 0.25s ease-in-out;
+    }
+
+    span {
+      text-transform: uppercase;
+      position: relative;
+      display: inline-block;
+      word-break: break-word;
+    }
+
+    &:hover, &:focus {
+      outline: none;
+      color: rgba(var(--white), var(--saturated));
+      &:after {
+        transform: scaleX(1);
+      }
+    }
+  }
+}
+
+.country {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+
+.content {
+  
+  &__top, &__bottom {
+    margin: 20px 0;
+    display: grid;
+    grid-gap: 20px;
+  }
+
+  @media screen and (min-width: 600px) {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    grid-gap: 20px;
+    align-items: start;
+  }
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+
+.back-button {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px 10px 5px;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 20px;
+  text-transform: uppercase;
+  color: rgba(var(--blue), var(--saturated));
+  background: rgba(var(--blue), var(--light));
+  border-radius: 7px;
+  border: 2px solid transparent;
+
+  &:hover, &:focus {
+    outline: none;
+    color: rgba(var(--white), var(--saturated));
+    background: rgba(var(--blue), var(--saturated));
+
+    path:last-child {
+      fill: rgba(var(--white), var(--saturated));
+    }
+  }
+
+  svg {
+    margin-right: 5px; 
+  }
+
+}
+
+.mini-flag {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid rgba(var(--gray), var(--saturated));
+
+  img {
+    object-fit: cover;
+    height: 100%;
+  }
+}
+
+.mini-list span {
+  margin-right: 5px;
+  &:after {
+    content: ',';
+  }
+  &:last-of-type:after { content: none; }
+}
+
+.inner {
+  padding: 0 10px;
+}
+
+.mb-10 {
+  margin-bottom: 10px;
+}

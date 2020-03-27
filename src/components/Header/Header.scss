@@ -1,19 +1,7 @@
-.toolbar {
-  display: grid;
-  flex-direction: column;
-  &>* {
-    padding: 10px;
-    position: sticky;
-    top: 0;
-    z-index: 1;
-    background: rgba(var(--white), 1);
-  }
-}
-
-
 .title {
   z-index: 4;
   font-size: 32px;
   line-height: 38px;
   text-align: center;
+  padding: 50px 0;
 }
