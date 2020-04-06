@@ -22,7 +22,7 @@ class CountriesService {
 
   async fetchCountries() {
     const url = `${API_URL}/all`
-
+    console.log('fetching countries')
     return axios.get(url).then(response => {
       const countryList = response.data
       localStorage.setItem('reactCountries', JSON.stringify(countryList))
@@ -31,6 +31,7 @@ class CountriesService {
   }
 
   getLocalStorage() {
+    console.log('getting local storage')
     return JSON.parse(localStorage.getItem('reactCountries'))
   }
 

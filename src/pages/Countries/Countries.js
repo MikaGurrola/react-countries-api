@@ -15,26 +15,31 @@ const Countries = () => {
   const [searchQuery, setSearchQuery] = useState('')
 
   useEffect(() => {
-    const allCountries = countryService.getAllCountries()
-    setCountries(allCountries)
-    setFilteredCountries(allCountries)
+    async function getData() {
+      const allCountries = await countryService.getAllCountries()
+      setCountries(allCountries)
+      setFilteredCountries(allCountries)
+  
+      const getRegions = () => {
+        const allRegions = allCountries.map(country => country.region).filter(region => region.length)
+        allRegions.sort()
+        let sortedRegions = [...new Set(allRegions)]
+        let regionObjects = sortedRegions.map(region => {
+          const regionObject = {
+            name: region,
+            isChecked: false
+          }
+          return regionObject
+        })
+        setRegions(regionObjects)
+        
+      }
+  
+      getRegions()
 
-    const getRegions = () => {
-      const allRegions = allCountries.map(country => country.region).filter(region => region.length)
-      allRegions.sort()
-      let sortedRegions = [...new Set(allRegions)]
-      let regionObjects = sortedRegions.map(region => {
-        const regionObject = {
-          name: region,
-          isChecked: false
-        }
-        return regionObject
-      })
-      setRegions(regionObjects)
-      
-    }
+    } 
 
-    getRegions()
+    getData()
 
   }, [])
 
