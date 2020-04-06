@@ -1,7 +1,7 @@
 .list {
   display: grid;
   grid-gap: 26px;
-  padding: 10px 15px 100px 15px;
+  padding: 10px 0 100px 0;
   max-width: 350px;
   margin: auto;
 
@@ -10,7 +10,7 @@
     overflow: hidden;
     transition: all 0.25s linear;
     background-image: linear-gradient(to bottom, rgba(var(--white), 0), rgba(var(--white), var(--saturated)) );
-    padding: 0 10px 20px 10px;
+    padding: 0 4px 20px 4px;
     border-radius: 8px;
     height: 100%;
     box-sizing: border-box;

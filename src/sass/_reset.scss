@@ -60,3 +60,9 @@ input {
 body {
   background: rgba(var(--gray), var(--light));
 }
+
+.container {
+  padding: 15px;
+  max-width: 1200px;
+  margin: 0 auto;
+}

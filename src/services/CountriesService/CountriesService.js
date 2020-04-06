@@ -7,17 +7,6 @@ class CountriesService {
     return localStorage.getItem('reactCountries') ? this.getLocalStorage() : this.fetchCountries()
   }
 
-  // getCountry(countryCode) {
-  //   const allCountries = this.getAllCountries()
-  //   // console.log('all:', allCountries)
-  //   // console.log('countrycode:', countryCode)
-    
-  //   const countryFound = allCountries.find(country => countryCode === country.alpha3Code)
-  //   // console.log(countryFound)
-    
-  //   return countryFound
-  // }
-
   getBorders(borders, allCountries) {
     return borders.map(borderCountry => {
       return allCountries.find(country => country.alpha3Code === borderCountry)

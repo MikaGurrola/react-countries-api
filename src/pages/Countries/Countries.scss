@@ -1,13 +1,10 @@
 .header {
   display: grid;
-  max-width: 1200px;
+  grid-gap: 10px;
 
   @media screen and (min-width: 900px) {
-    max-width: 1200px;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    margin: 0 auto 20px auto;
-    display: flex;
-    justify-content: space-between;
+    grid-template-columns: auto 1fr;
   }
 
 }
